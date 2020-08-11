@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Express and Webpack App</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <style>
+        .groups-container .badge {
+            font-size: 12pt;
+        }
+
+        .unread-badge {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 15px;
+        }
+    </style>
+
+</head>
+
+<body style="height: 100vh;">
+    <div class="container d-flex flex-column" id="app" style="height: 100%;">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <p>SociaLight</p>
+                <h2>Good afternoon, Kevin</h2>
+            </a>
+        </nav>
+        <div class="groups-container mb-auto" style="padding: 15px 0px;">
+            Favorites
+            <div class="list-group list-group-flush">
+                <span class="border-top"></span>
+                <a href="" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">Sales team</h3>
+                        <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1"><strong>James Anderson</strong> Sorry I missed lunch!</p>
+                </a>
+                <a href="" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">Project group</h3>
+                        <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1"><strong>Kevin Hubbard</strong> Haha</p>
+                </a>
+            </div>
+            Groups
+
+            <div class="list-group list-group-flush">
+                <span class="border-top"></span>
+                <a href="" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">
+                            <div class="unread-badge bg-primary align-middle">&nbsp;</div>Delta Psi social
+                        </h3>
+                        <small class="text-muted">3 days ago
+                        </small>
+                    </div>
+                    <p class="mb-1">One new social invite.</p>
+                </a>
+                <a href="" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h3 class="mb-1">I NEED THE MEMES</h3>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1"><strong>Sam Smith</strong> posted a photo.</p>
+                </a>
+            </div>
+        </div>
+        <div class="row bg-light">
+            <div class="col-lg-12">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control input-lg" id="search-church"
+                        placeholder="Your location (City, State, ZIP)">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-lg" type="submit">Search</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

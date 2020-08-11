@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SociaLight</title>
+
+</head>
+
+<body style="height: 100vh;">
+    <div class="container d-flex flex-column justify-content-center" style="height: 100%;" id="login">
+        <div class="" style="height: 15%;"></div>
+    </div>
+
+    <script type="text/html" id="login-view-template">
+        <div class="row flex-column d-flex align-self-center align-items-center">
+            <h1>
+                Welcome to SociaLight.
+            </h1>
+            <h3>
+                Good to have you back.
+            </h3>
+        </div>
+        <div class="align-self-center" style="width: 50%;" id="login">
+            <form autocomplete="off" style="width: 100%" id="login-information">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                        aria-describedby="basic-addon1" name="email">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Password"
+                        aria-describedby="basic-addon1" name="password">
+                </div>
+                <button type="submit" id="submit-login-btn" class="btn btn-success btn-block" disabled>Login</button>
+            </form>
+            <div class="create-new-acct text-center">
+                <a href="/login/new">Don't have an account?</a>
+            </div>
+        </div>
+    </script>
+
+
+</body>
+
+</html>

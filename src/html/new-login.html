@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SociaLight</title>
+
+</head>
+
+<body style="height: 100vh;">
+    <div class="container d-flex flex-column justify-content-center" style="height: 100%;" id="login">
+        <div class="" style="height: 15%;"></div>
+    </div>
+
+    <script type="text/html" id="create-user-view-template">
+        <div class="row flex-column d-flex align-self-center align-items-center">
+            <h1>
+                Welcome to SociaLight.
+            </h1>
+            <h3>
+                Let's get you started.
+            </h3>
+        </div>
+        <div class="align-self-center" style="width: 50%;" id="login">
+            <form autocomplete="off" style="width: 100%" id="login-information">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Your name" aria-label="Your name" aria-describedby="basic-addon1" name="name">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend dropleft">
+                        <span class="input-group-text btn btn-secondary dropdown-toggle selected-code" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="basic-addon1">+1</span>
+                        <div class="dropdown-menu country-phone-code-menu" style="max-height:200px; overflow-y:scroll;">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" id="search-country-code" placeholder="Search...">
+                                </div>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Phone" aria-label="Phone" aria-describedby="basic-addon1" name="phoneNumber">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" name="email">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" minlength="8" maxlength="64">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" placeholder="Confirm password" aria-label="Confirm password" aria-describedby="basic-addon1" name="passwordConfirm" minlength="8" maxlength="64">
+                </div>
+                <button type="submit" id="submit-login-btn" class="btn btn-success btn-block" disabled>Let's go</button>
+            </form>
+            <div class="existing-acct text-center">
+                <a href="/login">I already have an account</a>
+            </div>
+        </div>
+    </script>
+</body>
+
+</html>
