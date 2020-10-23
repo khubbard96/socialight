@@ -5,20 +5,138 @@
     <meta charset="utf-8">
     <title>Express and Webpack App</title>
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <style>
+        .collapsed .indicator {
+            transform: rotate(-90deg);
+        }
+
+        .socialight-group.messages-read {
+            color: #aaaaaa;
+        }
+
+        .groups-container .badge {
+            font-size: 12pt;
+        }
+
+        .unread-badge {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .modal.blade-modal .modal-dialog {
+            margin-top: 0;
+            max-width: unset;
+        }
+
+        .modal.blade-modal .modal-content {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
 
 </head>
 
 <body style="height: 100vh;">
     <div class="container d-flex flex-column" id="app" style="height: 100%;">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="">
+                <h3>Delta Psi social</h3>
+            </a>
+
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#tentativeEventModal">
+                <i class="far fa-lightbulb fa-3x"></i>
+            </button>
+
+            <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Lunch at Moe's</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="rounded mx-auto" style="display: block" height="150" width="150"
+                                        src="https://s3-media0.fl.yelpcdn.com/bphoto/OOzURn0gQef04UuJrmEsyw/348s.jpg"
+                                        alt="...">
+
+                                </div>
+                                <div class="col-9">
+                                    <ul class="" style="list-style: none;">
+                                        <li><i class="far fa-clock mx-2"></i>11:30a - 12:30p, 8/11/2020</li>
+                                        <li><i class="fas fa-map-marker-alt mx-2"></i>Moe's BBQ Auburn</li>
+                                        <li><i class="fas fa-user mx-2"></i>Tim Jordan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">I'll be there!</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Can't go...</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="tentativeEventModal" tabindex="-1" aria-labelledby="tentativeEventModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Tentative event</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="rounded mx-auto" style="display: block" height="150" width="150"
+                                        src="https://s3-media0.fl.yelpcdn.com/bphoto/OOzURn0gQef04UuJrmEsyw/348s.jpg"
+                                        alt="...">
+
+                                </div>
+                                <div class="col-9">
+                                    <ul class="" style="list-style: none;">
+                                        <li><i class="far fa-clock mx-2"></i>11:30a - 12:30p, 8/11/2020</li>
+                                        <li><i class="fas fa-map-marker-alt mx-2"></i>Moe's BBQ Auburn</li>
+                                        <li><i class="fas fa-user mx-2"></i>Tim Jordan</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">New time</button>
+                            <button type="button" class="btn btn-primary">New location</button>
+                            <button type="button" class="btn btn-success" data-dismiss="modal"><i class="far fa-thumbs-up"></i></button>
+                            <button type="button" class="btn btn-dark" data-dismiss="modal"><i class="far fa-times-circle"></i></button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
         <div id="messages-list" class="mb-auto" style="overflow-y: scroll;">
 
         </div>
         <div class="message-input p-2 bg-light">
             <form class="create-msg-form d-flex flex-row" style="width: 100%" autocomplete="off">
                 <div class="form-group flex-grow-1">
-                  <input class="form-control" placeholder="Send message" id="exampleFormControlInput1" name="text">
-                  <input type="submit" style="display: none;">
+                    <input class="form-control" placeholder="Send message" id="exampleFormControlInput1" name="text">
+                    <input type="submit" style="display: none;">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i></button>

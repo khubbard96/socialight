@@ -4,6 +4,7 @@ import './css/style.css'
 import $ from 'jquery';
 import _ from 'underscore';
 import App from './js/app';
+import 'bootstrap';
 
 window.jQuery = window.$ = $;
 window._ = _;
@@ -11,7 +12,8 @@ window._ = _;
 
 // Log message to console
 logMessage('Its finished!!');
-new App().render();
+
+//new App().render();
 
 
 if (module.hot)       // eslint-disable-line no-undef
